@@ -1,0 +1,161 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0ebeb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+
+.container {
+    background: #fff;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.opciones-radio {
+    display: flex;
+    gap: 15px; /* espacio horizontal entre radio+label */
+    flex-wrap: nowrap;
+    margin-top: 5px;
+}
+.opciones-radio label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.contenido-superior {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mensaje-alerta {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+.contenido-superior h2 {
+    margin: 0;
+}
+.logo-superior {
+    position: absolute;
+    width: 90px;
+    top: 10px;
+    z-index: 10;
+}
+
+.logo-izquierda {
+    left: 10px;
+}
+
+.logo-derecha {
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .opciones-radio {
+        flex-direction: column;
+    }
+
+    .logo-superior {
+        width: 40px;
+    }
+}
+.opciones-radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.radio-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 6px 10px;
+    transition: background-color 0.2s;
+}
+
+.radio-wrap input[type="radio"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.radio-wrap:hover {
+    background-color: #e8f0ff;
+}
+
+.radio-wrap span {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .opciones-radio {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .radio-wrap {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
