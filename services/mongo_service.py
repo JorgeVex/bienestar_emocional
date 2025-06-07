@@ -11,7 +11,7 @@ class MongoService:
         """
         Inicializa la conexión a MongoDB Atlas usando la URI proporcionada desde variables de entorno.
         """
-        uri = os.getenv("MONGO_URI")
+        uri = os.getenv("MONGO_ATLAS_URI")
         self.client = MongoClient(uri)
         self.db = self.client['cuestionario_bienestar']
 
