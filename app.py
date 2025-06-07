@@ -21,24 +21,21 @@ def formulario():
 
 @app.route('/api/respuestas', methods=['POST'])
 def recibir_respuestas():
-    """
-    Ruta que recibe las respuestas enviadas por el usuario.
-    Guarda las respuestas en MongoDB, tanto por categoría como en un resumen completo.
-    """
-    data = request.json
-    print("Datos recibidos:", data)
+    try:
+        data = request.json
+        print("✅ Datos recibidos:", data)
 
-    asignacion = asignador.obtener_asignacion()
+        asignacion = asignador.obtener_asignacion()
 
-    # Insertar respuestas separadas por categoría
-    mongo_service.insertar_por_categoria(data, asignacion)
+        mongo_service.insertar_por_categoria(data, asignacion)
+        mongo_service.insertar_resumen_completo(data)
 
-    # Insertar resumen completo
-    mongo_service.insertar_resumen_completo(data)
+        print("✅ Respuestas guardadas en MongoDB")
+        return jsonify({"mensaje": "Respuestas guardadas correctamente en MongoDB"}), 200
 
-    print("Respuestas guardadas en MongoDB")
-
-    return jsonify({"mensaje": "Respuestas guardadas correctamente en MongoDB"}), 200
+    except Exception as e:
+        print(f"❌ ERROR en /api/respuestas: {e}")
+        return jsonify({"mensaje": "Error interno del servidor"}), 500
 
 if __name__ == '__main__':
     # Ejecutar la aplicación en el puerto 5000
