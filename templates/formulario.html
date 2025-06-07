@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Bienestar Emocional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="contenido-superior">
+            <p></p>
+            <p></p>
+            <p></p>
+            <h1>Cuestionario de Bienestar Emocional</h1>
+            <p class="mensaje-alerta">
+                Al enviar las respuestas, la página se cerrará automáticamente en 5 segundos.
+            </p>
+        </div>
+        <div class="container">
+            <form id="formulario">
+                <div id="preguntas"></div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='JS/formulario.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <img src="{{ url_for('static', filename='IMG/LogoIbero.png') }}" class="logo-superior logo-izquierda" alt="Logo IBERO">
+    <img src="{{ url_for('static', filename='IMG/LogoIbero.png') }}" class="logo-superior
+     logo-derecha" alt="Logo IBERO">
+
+</body>
+</html>
+
